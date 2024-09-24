@@ -1,10 +1,19 @@
+
+// Function call
+
+function getInputValueById(id) {
+    const value = parseFloat(document.getElementById(id).value);
+    return value;
+}
+
+
+
 // card 1
 const donetNow = document.getElementById('donate-now-btn');
 donetNow.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const inputValue = parseFloat(document.getElementById('input-amount').value);
-
+    const inputValue = getInputValueById('input-amount')
 
     const totalBalance = parseFloat(document.getElementById('total-balance').innerText);
 
@@ -47,21 +56,20 @@ const donetNow2 = document.getElementById('donate-now-btn-2');
 donetNow2.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const inputValue2 = parseFloat(document.getElementById('input-amount-2').value);
-
+    const inputValue = getInputValueById('input-amount-2');
 
     const totalBalance2 = parseFloat(document.getElementById('total-balance').innerText);
 
     const donataionAmountBalance2 = parseFloat(document.getElementById('donataion-amount-value-2').innerText);
 
 
-    if (inputValue2 <= 0 || inputValue2 > totalBalance2 || isNaN(inputValue2)) {
+    if (inputValue <= 0 || inputValue > totalBalance2 || isNaN(inputValue)) {
         return alert('Invaild Donation amount');
     }
 
-    const newBalance2 = totalBalance2 - inputValue2;
+    const newBalance2 = totalBalance2 - inputValue;
 
-    const donateNewBalance2 = donataionAmountBalance2 + inputValue2;
+    const donateNewBalance2 = donataionAmountBalance2 + inputValue;
 
     document.getElementById('total-balance').innerText = newBalance2;
 
@@ -72,7 +80,7 @@ donetNow2.addEventListener('click', function (event) {
     const history = document.createElement('div');
     history.className = 'bg-white p-3 h-[120px] mx-7 b rounded border  boder-blue-500';
     history.innerHTML = `
-    <p class ="text-lg text-gray-500 font-extrabold "> ${inputValue2} Taka  Donate for Flood Relief in Feni,Bangladesh
+    <p class ="text-lg text-gray-500 font-extrabold "> ${inputValue} Taka  Donate for Flood Relief in Feni,Bangladesh
     The recent floods in  Feni have caused</P>
      <p class = "text-md text-gray-500">Date: ${new Date().toLocaleString()}</p>
     `;
@@ -94,21 +102,20 @@ const donetNow3 = document.getElementById('donate-now-btn-3');
 donetNow3.addEventListener('click', function (event) {
     event.preventDefault();
 
-    const inputValue3 = parseFloat(document.getElementById('input-amount-3').value);
-
+    const inputValue = getInputValueById('input-amount-3');
 
     const totalBalance3 = parseFloat(document.getElementById('total-balance').innerText);
 
     const donataionAmountBalance3 = parseFloat(document.getElementById('donataion-amount-value-3').innerText);
 
 
-    if (inputValue3 <= 0 || inputValue3 > totalBalance3 || isNaN(inputValue3)) {
+    if (inputValue <= 0 || inputValue > totalBalance3 || isNaN(inputValue)) {
         return alert('Invaild Donation amount');
     }
 
-    const newBalance3 = totalBalance3 - inputValue3;
+    const newBalance3 = totalBalance3 - inputValue;
 
-    const donateNewBalance3 = donataionAmountBalance3 + inputValue3;
+    const donateNewBalance3 = donataionAmountBalance3 + inputValue;
 
     document.getElementById('total-balance').innerText = newBalance3;
 
@@ -119,7 +126,7 @@ donetNow3.addEventListener('click', function (event) {
     const history = document.createElement('div');
     history.className = 'bg-white p-3 h-[120px] mx-7 b rounded border  boder-blue-500';
     history.innerHTML = `
-    <p class ="text-lg text-gray-500 font-extrabold "> ${inputValue3} Taka Aid for Injured in the Quota Movement,
+    <p class ="text-lg text-gray-500 font-extrabold "> ${inputValue} Taka Aid for Injured in the Quota Movement,
     The recent floods in Bangladesh have caused</P>
      <p class = "text-md text-gray-500">Date: ${new Date().toLocaleString()}</p>
     `;
