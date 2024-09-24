@@ -7,6 +7,18 @@
     box-sizing: border-box;
 }
 
-body {
+.font-style {
     font-family: "Raleway";
+}
+
+#donataion-amount-value,
+#total-balance {
+    font-size: 20px;
+    font-family:serif;
+}
+
+
+.top-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(100px);
 }
